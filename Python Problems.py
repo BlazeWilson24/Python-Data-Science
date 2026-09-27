@@ -72,7 +72,7 @@ if (year%400==0) and (year%100==0):
 elif (year%4==0) and (year%100!=0):
     print(year, "is a leap year.")   
 else: 
-    print(year,"Its not a leap year.")    \
+    print(year,"Its not a leap year.")   
 
 # Q10. Find the largest among three numbers.
 
@@ -84,7 +84,148 @@ if (num1>num2) and (num1>num3):
 elif (num2>num1) and (num2>num3):
     print(num2, "is greater.")
 else: 
-    print(num3,"is greater.")        
+    print(num3,"is greater.")    
+
+# Q11. Program to check if the number is prime or not.
+
+num = int(input("Enter a number:"))        
+if num==1:
+   print("It is not a prime number.")
+if num>1:
+    for i in range(2,num):
+     if num%i==0:
+       print("It is not a prime number")
+       break
+    else:
+        print("Its a prime number")
+
+
+# Q12. Program to generate a random number.
+
+import random
+
+num = random.randint(0,10)
+print(num)
+
+
+# Q13. Python program to print all the prime numbers in an interval.
+
+lower = int(input("Enter a number: "))
+upper = int(input("Enter a number: "))
+
+for num in range(lower, upper + 1):
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                break
+        else:
+            print(num)
+
+# Q14. Program to convert celsius to fahrenheit.
+
+celsius = int(input("Enter a number in celsius: "))
+fahrenheit = (celsius*(9/5))+32
+print("The converted value is ",fahrenheit,"fahreheit.")
+
+
+# Q15. Program to find the factorial of a number.
+
+num = int(input("Enter a number: "))
+fact = 1
+if num<0:
+    print("It doesnot exist.")
+if num==0:
+    print("Factorial of 0 is",1)
+if num>0:
+    for i in range(1,num+1):
+        fact = fact*i
+print("The factorial of the given number is",fact)                
+
+# Using Recursion
+
+def fact(a):
+    if a==0:
+        return 1
+    else: 
+        return((a)*fact(a-1))
+
+num = int(input("Enter a number here: "))
+result = fact(num)
+print("The factorial of the given number is ",result)    
+
+# 16Q. Program to display the multiplication table.
+
+n = int(input("Enter a number here: "))
+for i in range(1,11):
+    print(n,"x",i,"=",n*i)
+
+# Using while loop
+
+n= 9
+i=1
+while i<=10:
+    print(n,"x",i,"=",n*i)
+    i+=1
+
+# 17Q. Program to print the fibonacci sequence.
+
+a= 0
+b= 1
+num = int(input("Enter a number: "))
+if num==1:
+    print(a)
+else:
+    print(a)
+    print(b)
+    for i in range (2, num):
+        c= a+b
+        a=b
+        b=c
+        print(c)
+
+# 18Q. Program to check armstrong number.
+
+num = int(input("Enter a number here: "))
+sum = 0
+temp = num
+while temp>0:
+    digit=temp%10
+    cube= digit**3
+    sum=sum+cube
+    temp//=10
+if sum==num:
+    print("It is an armstrong number. ")
+else:
+    print("It is not an armstrong number.")        
+
+# 19Q. Program to find armstrong number in an interval.
+
+lower = int(input("Enter the lower limit: "))
+upper = int(input("Enter the upper limit: "))
+
+for num in range(lower, upper+1):
+    order = len(str(num))
+    sum=0
+    temp=num
+    while temp>0:
+        digit = temp%10
+        sum+=digit**order
+        temp//=10
+    if num == sum:
+        print(num)    
+
+# 20Q. Program to find the sum of natural numbers.
+
+num= int(input("Enter a number here: "))        
+if num<0:
+    print("Please enter the positive number.")
+else:
+    sum=0
+    while num>0:
+        sum+=num
+        num-=1
+    print(sum)    
+
 
 
 
